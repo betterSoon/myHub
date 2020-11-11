@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入图标 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <!-- 引入重置样式 -->
+    <link rel="stylesheet" href="style/normalize.css">
+    <style>
+        body{
+            font-size: 14px;
+            color: #999;
+        }
+        /* 高度塌陷问题 */
+        .clearfix::before,
+        .clearfix::after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+        /* 设置外部容器的样式 */
+        .top-bar-wrapper{
+            height: 32px;
+            line-height: 32px;
+            width: 100%;
+            background-color: rgb(227, 228, 229);
+        }
+       /* 设置内部容器的样式 */
+       .top-bar{
+           width: 1190px;       
+           margin: 0 auto;
+          
+           height: 100%;
+       }
+       /* 设置location的位置 */
+       .location{
+           float: left;
+           position: relative;
+           z-index: 9999;
+       }
+    /* 设置location中小图标的颜色 */
+       .location .iconfont{
+           font-size: 14px;
+           color: red;
+       }
+       /* 设置ul的位置 */
+       .shortcut{
+            float: right;
+            list-style: none;
+            margin-top: 0;
+            
+       }
+    /* ul里li的位置 */
+    .shortcut li{
+        float: left;
+    }
+    /* 去除超链接的下划线 */
+    a{
+        text-decoration: none;
+    }
+    /* 设置字体的颜色 */
+    .location .currentcity a,
+    .shortcut li a,
+    .shortcut li span{
+        color: #999;
+        font-size: 14px;
+    }
+    /* 鼠标移动变红 */
+    .top-bar a:hover
+    {
+        color: red;
+    }
+    /* 刚打开页面  有字体为红色 */
+    .top-bar .highline{
+        color: red;
+    }
+    /* 设置分割线 */
+    .shortcut .line{
+        width: 1px;
+        height: 10px;
+        margin: 11px 12px 0;
+        background-color: #999;
+    }
+    /* 城市列表 */
+    .location .city-list{
+        width: 320px;
+        height: 436px;
+        background-color: white;
+        border: 1px rgb(204, 204, 204) solid;
+        display: none;
+        /* 设置绝对定位 脱离文档流，使其不占据位置 */
+        position: absolute;
+        box-shadow: 0 0 2px rgba(255, 255, 255,.2);
+        
+        top: 30px;
+    }
+    /* 当鼠标移入到城市 显示城市列表 */
+    .location:hover .city-list{
+        display: block;
+        
+    }
+    .currentcity{
+        padding: 0 10px;
+        position: relative;
+        z-index: 9999;
+    }
+    .location:hover .city-list{
+        background-color: white;   
+        border-bottom: none;
+        padding-bottom: 1px;
+        z-index: 99;
+        
+    }
+    </style>
+</head>
+<body>
+    <!-- 创建外围容器 -->
+    <div class="top-bar-wrapper">
+        <!-- 内部容器 -->
+        <div class="top-bar clearfix">
+            <!-- 左侧菜单 -->
+            <div class="location">
+                <div class="currentcity">
+                    <i class="iconfont">&#xe6c1;</i>
+                    <a href="javascript:;">北京</a>
+                </div>
+                <!-- 城市列表 -->
+                <div class="city-list"></div>
+
+            </div>
+            <!-- 右侧菜单 -->
+            <ul class="shortcut clearfix">
+                <li><a href="javascript:;">您好，请登录</a>
+                    <a class="highline" href="javascript:;">免费注册</a>
+                </li>
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li><a href="javascript:;">我的订单</a></li>
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">我的京东</a>
+                    <i class="iconfont">&#xe667;</i>
+                </li>
+                
+                <li class="line"></li>
+                <li><a href="javascript:;">京东会员</a></li>
+                <li class="line"></li>
+                <li>
+                    <a class="highline" href="javascript:;">企业采购</a>
+                    <i class="iconfont">&#xe667;</i>
+                </li>
+            
+                <li class="line"></li>
+                <li>
+                    <span>客户服务</span>
+                    <i class="iconfont">&#xe667;</i>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <span>网站导航</span>
+                    <i class="iconfont">&#xe667;</i>
+                </li>
+                <li class="line"></li>
+                <li>
+                    <span>手机京东</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
