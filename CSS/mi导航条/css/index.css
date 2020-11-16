@@ -1,0 +1,142 @@
+/* 主页index.html的样式表 */
+
+/* 顶部导航条的容器 */
+.top-bar-wrapper{
+    background-color: #333;
+    height: 40px;
+    line-height: 40px;
+}
+
+/* 设置超链接的颜色 */
+.top-bar a{
+    font-size: 12px;
+    color: #b0b0b0;
+    /* 变成块元素，使得超链接超出上下范围也可以点击 */
+    display: block;
+}
+/* 设置超链接选中的状态 */
+.top-bar a:hover{
+    color: white;
+}
+/* 分割线的颜色 */
+.top-bar .line{
+    color: #424242;
+    margin-top: -1px;
+}
+/* 设置距离 */
+.top-bar li a{
+    margin: 0 8px;
+}
+/* 导航栏左侧 以及li都是向左浮动*/
+.service,.top-bar li{
+    float: left;
+}
+/* 设置app的下拉 */
+.app .qrcode{
+    position: absolute;
+    left: -38px;
+    width: 124px;
+    height: 0;
+    overflow: hidden;
+    line-height: 1;
+    text-align: center;
+    background-color:white;
+    box-shadow: 0 0 10px rgba(0, 0,0, .3);
+    transition: height 3s;
+}
+.service .app:hover .qrcode{
+    height: 148px;
+}
+.app{position: relative;}
+.app:hover::after{
+    display: block;
+}
+/* 设置小三角 */
+.app::after{
+    display: none;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-top: none;
+    border-bottom-color: white;
+}
+/* 设置二维码的图片 */
+.app .qrcode img{
+    width: 90px;
+    margin:17px;
+    margin-bottom: 10px;
+}
+/* 设置图片下的字体 */
+.app .qrcode span{
+    color: black;
+}
+
+/*导航栏右侧  */
+.shop-car,
+.user-info{
+    float: right;
+    font-size: 14px;
+}
+
+/* 设置购物车的样式 */
+.shop-car a{
+    width: 120px;
+    background-color: #424242;
+    text-align: center;
+}
+
+/* 购物车前边的icon */
+.fa-shopping-cart{
+    margin-right: 5px;
+}
+/* 设置选中的样式 */
+.shop-car:hover a{
+    background-color: white;
+    color: #ff6700;
+}
+/* 购物车的位置 */
+.shop-car{
+    position: relative;
+}
+/* 购物车下拉框的文字 */
+.shop-car span{
+    position: relative;
+    color: black;
+    top: 25px;
+}
+/* 设置购物车的下拉框 */
+.shop-car a .car{
+    width: 316px;
+    height: 0px;
+    transition: height 0.5s;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    position: absolute;
+    right: 8px;
+    overflow: hidden;
+    z-index: 9;
+
+}
+
+/* 选中购物车下拉框 */
+.shop-car:hover .car{
+    height: 100px;
+}
+/* 挡住购物车下拉框的阴影的线条 */
+.shop-car .line-ver{
+    width: 120px;
+    height: 10px;
+    position: absolute;
+    right: 8px;
+    top: 30px;
+    background-color: #424242;
+    z-index: 10;
+}
+/* 修改挡住购物车下拉框阴影线条的颜色 */
+.shop-car:hover .line-ver{
+    background-color: white;
+}
