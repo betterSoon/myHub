@@ -1,0 +1,81 @@
+.ad{
+    height: 170px;
+    margin-top: 14px;
+}
+.ad .shortcut{
+    float: left;
+    width: 234px;
+    height: 170px;
+    background-color:  rgba(0, 0, 0, .6);
+    margin-right: 14px;
+}
+.ad .shortcut li{
+    float: left;
+    height: 81px;
+    width: 75px;
+    border: 0px solid #cfccca;
+
+}
+.ad .shortcut li{
+    position: relative;
+}
+.ad .shortcut li::before{
+    content: '';
+    position: absolute;
+    width: 64px;
+    height: 1px;
+    background-color: #cfccca;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+}
+.ad .shortcut li::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 64px;
+    background-color: #cfccca;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin:10px 0;
+}
+.ad .shortcut a{
+    display: block;
+    color: #cfccca;  
+    text-align: center;
+
+}
+.ad .shortcut i{
+    display: block;
+    text-align: center;
+    width: 50px;
+    width: 50px;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.ad .shortcut li:hover a{
+    color:white;
+}
+.ad .imgs{
+    float: left;
+}
+.ad .imgs li{
+    float: left;
+}
+
+.ad .imgs li{
+    width: 316px;
+    height: 170px;
+    background-color: red;
+    
+}
+.ad .imgs li:not(:last-child){
+    margin-right: 15px;
+}
+
+.ad .imgs li a img{
+    width: 100%;
+}

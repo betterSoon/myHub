@@ -1,0 +1,134 @@
+/* 设置中间的header */
+.header{
+    height: 100px;
+
+    line-height: 100px;
+}
+/* 设置logo的位置 */
+.header .logo{
+    float: left;
+    width: 55px;
+    height: 55px;
+    background-color:#ff6700;
+    position: relative;
+    margin: 22.5px auto;
+    overflow: hidden;
+}
+/* 设置logo中超链接的样式 */
+.header .logo a{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    left: 0;
+    background-image: url(../img/mi-logo.png);
+    background-position: center;
+    transition: left 0.3s;
+}
+/* 设置logo另外一个图片 */
+.header .logo .home{
+    left: -55px;
+    background-image: url(../img/mi-home.png);
+}
+/* 设置logo点击时的滑动效果 */
+.header .logo:hover .mi{
+    left: 55px;
+}
+/* 设置logo点击时的滑动效果 */
+.header .logo:hover .home{
+    left: 0;
+}
+
+/* 设置中间的导航条 */
+.nav-wrapper .nav{
+    float: left;
+}
+/* 设置导航条下的li */
+.nav-wrapper .nav>li{
+    font-size: 18px;
+    float: left;
+    margin: 0 10px;
+}
+.all-goods-wrapper{
+    position: relative;
+}
+/* 给li设置鼠标选中变化 */
+.nav-wrapper .nav>li>a:hover{
+    color:red;
+}
+/* 设置左侧导航条的样式 */
+.left-menu{
+    width: 234px;
+    height: 420px;
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    left: -120px;
+    line-height: 1;
+    padding: 20px 0;
+    z-index: 999;
+}
+.left-menu a{
+    display: block;
+    width: 204px;
+    height: 42px;
+    line-height: 42px;
+    color: white;
+    padding-left: 30px;
+    box-sizing: content-box;
+}
+.left-menu a i{
+    float:right;
+    line-height: 42px;
+    margin-right: 40px;
+}
+.left-menu li a:hover{
+    color: white;
+    background-color: #ff6700;
+}
+/* 修改头部中间导航条第一个li的距离 */
+.nav-wrapper .nav:first-child{
+    padding-left: 50px;
+}
+
+
+/* 隐藏全部商品 */
+.all-goods{
+    visibility: hidden;
+}
+.header-wrapper{
+    position: relative;
+}
+.nav .goods-info{
+    height:0;
+    width: 100%;
+    background-color:white;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition: height 0.3s;
+    overflow: hidden;
+}
+.nav>li:not(:first-of-type):hover~.goods-info,
+.goods-info:hover{
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 0 2px rgb(0, 0, .3);
+    height: 228px;
+}
+/* 搜索框容器 */
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+    float: right;
+    margin-top: 25px;
+}
+.search-wrapper .search-inp{
+    width: 222px;
+    float: left;
+    padding: 0 10px;
+    height: 50px;
+}
+.search-wrapper .search-btn{
+    padding: 0;
+    float: left;
+    height: 50px;
+    width: 50px;
+}
