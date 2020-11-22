@@ -1,0 +1,31 @@
+.box1{
+    .box2{
+        color:red;
+    }
+    >.box3{
+        color:green;
+        &:hover{
+            color:blue;
+        }
+    }
+    &:hover{
+        color:yellow;
+    }
+    div &{
+        width: 100px;
+    }
+}
+
+.p1{
+    width: 100px;
+    height: 100px;
+}
+
+.p2{
+    width: 100px;
+    height: 100px;
+    color: red;
+}
+.p2:extend(.p1){
+    color:yellow;
+}
