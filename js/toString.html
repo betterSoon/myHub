@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        Person.prototype.toString = function(){
+            return "Person[name="+this.name+",age="+this.age+",gender="+this.gender+"]";
+        }
+        var per = new Person("sun", 19, "男");
+        var per2 = new Person("sun", 20, "男");
+        console.log(per.toString());
+        console.log(per20.toString());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
