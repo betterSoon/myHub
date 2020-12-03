@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var reg = /a/i;
+        console.log(reg.test("abc"));
+        var reg2 = /a|b/;
+        reg2.test("asdasdasdadvb");
+        var phoneStr = "12345697";
+        var reg2 =  /^1[3-9][0-9]{9}$/;
+        reg2.test(phoneStr);
+
+        //电子邮件
+        var emailReg = /^\w{3,}(\.\w+)*@[A-z0-9]\.[A-z]{2,5}\.[A-z]{2,5}$/;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
