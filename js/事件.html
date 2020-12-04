@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            //查找北京
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function(){
+                var bj = document.getElementById("bj");
+                alert(bj.innerHTML);
+            };
+            //查找所有的li元素
+            var btn02 = document.getElementById("btn02");
+            btn02.onclick = function(){
+                var lis = document.getElementsByTagName("li");
+                for(var i = 0; i<lis.length;i++){
+                    alert(lis[i].innerHTML);
+                }
+            };
+
+            var btn03 = document.getElementById("btn03");
+            btn03.onclick = function(){
+                var inputs = document.getElementsByName("gender");
+                for(var i = 0;i<inputs.length;i++){
+                    alert(inputs[i].value);
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            alert("what");
+        };
+    </script>
+</body>
+</html>
