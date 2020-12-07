@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            function del(){
+                    var tr = this.parentNode.parentNode;
+                    var name = tr.getElementsByTagName("td")[0].innerHTML;
+                    if(confirm("确认删除"+name+"吗")){
+                        tr.parentNode.removeChild(tr);
+                    };
+                    
+                    return false;
+                };
+            //点击超链接删除信息
+            var allA= document.getElementsByTagName("a");
+            for(var i = 0 ; i < allA.length;i++){
+                allA[i].onclick = del;
+            };
+            //添加新员工
+            var name = document.getElementsByName("empName");
+            var email = document.getElementsByName("email");
+            var salary = document.getElementsByName("salary");
+            var submit = document.getElementsByName("submit");
+            submit[0].onclick = function(){
+                var tr2 = document.createElement("tr");
+                var td1 = document.createElement("td");
+                var text1 = document.createTextNode(name[0].value);
+                td1.appendChild(text1);
+                var td2 = document.createElement("td");
+                var text2 = document.createTextNode(email[0].value);
+                td2.appendChild(text2);
+                var td3 = document.createElement("td");
+                var text3 = document.createTextNode(salary[0].value);
+                td3.appendChild(text3);
+                var td4 = document.createElement("td");
+                var a4 = document.createElement("a");
+                a4.href="javascript:;";
+                a4.onclick = del;
+                td4.appendChild(a4);
+                var text4 = document.createTextNode("delete");
+                a4.appendChild(text4);
+                var tables = document.getElementById("employeeTable");
+                tables.appendChild(tr2);
+                tr2.appendChild(td1);
+                tr2.appendChild(td2);
+                tr2.appendChild(td3);
+                tr2.appendChild(td4);
+                
+            };
+        };
+    </script>
+</head>
+<body>
+    <table id="employeeTable" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>tom@tom.com</td>
+            <td>5000</td>
+            <td><a href="javascript:;">delete</a></td>
+        </tr>
+        <tr>
+            <td>Terry</td>
+            <td>terry@sohu.com</td>
+            <td>8000</td>
+            <td><a href="deleteEmp?id=002">delete</a></td>
+        </tr>
+    </table>
+    <div>
+        <h4>添加新员工</h4>
+        <table border="1">
+            <tr>
+                <td class="word">name:</td>
+                <td class="inp">
+                    <input type="text" name="empName" id="empName">
+                </td>
+            </tr>
+            <tr>
+                <td class="word">email:</td>
+                <td class="inp">
+                    <input type="text" name="email" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td class="word">salary:</td>
+                <td class="inp">
+                    <input type="text" name="salary" id="salary">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="submit" value="submit">
+                </td>  
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
