@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var box1 = document.getElementById("box1");
+            var button = document.getElementsByTagName("button");
+            button[0].onclick = function(){
+                box1.style.width = "300px";
+                
+            };
+            button[1].onclick = function(){
+                //alert(box1.style.width);
+                //alert(box1.currentStyle.backgroundColor);
+                var obj = getComputedStyle(box1,null);
+                
+                alert(obj.width);
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <button>点我一下</button>
+    <button>点我一下2</button>
+</body>
+</html>
