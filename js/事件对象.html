@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px black solid;
+        }
+        #areaDiv{
+            width: 500px;
+            height: 300px;
+        }
+        #showMsg{
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+           var areaDiv = document.getElementById("areaDiv") ;
+           var showMsg = document.getElementById("showMsg") ;
+           areaDiv.onmousemove = function(e){
+                var x = e.clientX;
+                var y = e.clientY;
+                showMsg.innerHTML = "x="+x+"y="+y;
+               // e = e || window.e;
+                if(!e){
+                    e = window.e;
+                }
+           };
+        };
+    </script>
+</head>
+<body>
+    <div id="areaDiv">
+        
+    </div>
+    <div id="showMsg">
+
+    </div>
+</body>
+</html>
