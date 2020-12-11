@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+        #img{
+            position: absolute;
+            top:500px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            //拖拽元素
+            //鼠标在拖拽元素摁下时，开始拖拽onmousedown
+            var box1 = document.getElementById("box1");
+            var img = document.getElementById("img");
+            drag(box1);
+            drag(img);
+        }
+        function drag(obj){
+            obj.onmousedown = function(e){
+                //鼠标移动时，元素跟随鼠标移动onmousemove
+                e = e||window.e;
+                var ol = e.clientX - obj.offsetLeft;
+                var ot = e.clientY - obj.offsetTop;
+             document.onmousemove = function(e){
+                    e = e||window.e;
+                    var left = e.clientX - ol;
+                    var top = e.clientY- ot;
+                    obj.style.left = left +"px";
+                    obj.style.top =top+"px";
+                 };
+            };
+            
+            //鼠标松开时，元素固定在当前位置onmouseup
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <img src="./img/1.jpg" alt="" id="img">
+</body>
+</html>

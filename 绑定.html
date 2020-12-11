@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            function bind(obj,evenStr,callback){
+                if(obj.addEventListener){
+                    obj.addEventListener(evenStr,callback,false);
+                }else{
+                    obj.attachEvent("on" + evenStr,callback);
+                };
+                
+                
+            };
+            function fun(){
+                alert("1");
+            };
+            function fun2(){
+                alert("2");
+            };
+            var btn = document.getElementById("btn");
+            btn.addEventListener("click",fun,false);
+            btn.addEventListener("click",fun2,false);
+        };
+    </script>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+</body>
+</html>

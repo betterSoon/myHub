@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            //拖拽元素
+            //鼠标在拖拽元素摁下时，开始拖拽onmousedown
+            var box1 = document.getElementById("box1");
+            box1.onmousedown = function(e){
+                //鼠标移动时，元素跟随鼠标移动onmousemove
+                e = e||window.e;
+                var ol = e.clientX - box1.offsetLeft;
+                var ot = e.clientY - box1.offsetTop;
+             document.onmousemove = function(e){
+                    e = e||window.e;
+                    var left = e.clientX - ol;
+                    var top = e.clientY- ot;
+                    box1.style.left = left +"px";
+                 box1.style.top =top+"px";
+                 };
+            };
+            
+            //鼠标松开时，元素固定在当前位置onmouseup
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                
+            };
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>
